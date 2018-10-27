@@ -1,6 +1,10 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-{{#if username }}
-    <p>Logged in as: {{username}}</p>
-{{/if}}
-<p>session visits: {{visits}}</p>
+<div class="jumbotron text-center">
+  <h1 class="display-5">{{title}}</h1>
+  <hr class="my-4">
+  <div style="display: inline-flex">
+    <form class="form-inline">
+      <input class="form-control mr-sm-1" type="search" placeholder="Search kanji keyword..." aria-label="Search">
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </div>
+</div>

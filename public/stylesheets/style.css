@@ -36,3 +36,10 @@ form button:hover {
   background-color: #1156a7;
   color: #fff;
 }
+
+/*
+* JUMBOTRON
+*/
+.jumbotron {
+    background-color:transparent !important; 
+}
