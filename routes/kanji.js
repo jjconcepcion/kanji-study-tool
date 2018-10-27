@@ -1,19 +1,26 @@
 const express = require('express');
+const Kanji = require('../models/kanji');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  const loggedIn = req.user;
-  const kanjiData = {
-    rtk_no: 1701,
-    kanji: '漢',
-    keyword: 'Sino-',
-    onyomi: 'カン',
-    kunyomi: null,
-    meaning: 'Sino-,China',
-    note: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit enim, tempor eget nunc vel, eleifend condimentum ipsum. Pellentesque pharetra.'
-  };
-  res.render('kanji', { loggedIn, kanjiData });
+router.get('/:character', (req, res) => {
+  const renderOptions = {
+    loggedIn: req.user,
+  }
+
+  const { character } = req.params;
+  Kanji.findByCharacter(character)
+    .then(results => {
+      const { rowCount, rows } = results;
+      if (rowCount == 1) {
+        renderOptions.kanjiData = rows[0];
+        res.render('kanji', renderOptions);
+      } else {
+        renderOptions.message = 'Kanji Not Found';
+        res.render('error', renderOptions)
+      }
+    })
+    .catch(err => console.log(err));
 });
 
 module.exports = router;
