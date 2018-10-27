@@ -29,6 +29,7 @@
   </div>
 </div>
 
+{{#if loggedIn}}
 <div class="card" style="margin-top: 2em">
   <div class="card-header">
     Notes
@@ -37,3 +38,4 @@
     <textarea style="width: 100%; border: none;">{{kanjiData.note}}</textarea>
   </div>
 </div>
+{{/if}}

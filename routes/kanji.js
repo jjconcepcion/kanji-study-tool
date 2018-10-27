@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
+  const loggedIn = req.user;
   const kanjiData = {
     rtk_no: 1701,
     kanji: '漢',
@@ -12,7 +13,7 @@ router.get('/', (req, res) => {
     meaning: 'Sino-,China',
     note: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit enim, tempor eget nunc vel, eleifend condimentum ipsum. Pellentesque pharetra.'
   };
-  res.render('kanji', { kanjiData });
+  res.render('kanji', { loggedIn, kanjiData });
 });
 
 module.exports = router;
