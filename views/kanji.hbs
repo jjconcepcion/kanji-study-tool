@@ -1,0 +1,39 @@
+<div class="text-center">
+<h3>{{kanjiData.keyword}}</h3>
+<p style="font-size: 700%">{{kanjiData.kanji}}</p>    
+</div>
+<div class="card-deck text-center">
+  <div class="card">
+    <div class="card-header">
+        Kunyomi
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{kanjiData.kunyomi}}</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+        Onyomi
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{kanjiData.onyomi}}</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+        Meanings
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{kanjiData.meaning}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="margin-top: 2em">
+  <div class="card-header">
+    Notes
+  </div>
+  <div class="card-body">
+    <textarea style="width: 100%; border: none;">{{kanjiData.note}}</textarea>
+  </div>
+</div>
