@@ -19,3 +19,16 @@ CREATE TABLE IF NOT EXISTS "session" (
 )
 WITH (OIDS=FALSE);
 ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
+
+
+--
+-- KANJI TABLE
+--
+CREATE TABLE "kanji" (
+  "rtk_no" SMALLSERIAL PRIMARY KEY,
+  "kanji" CHAR(1) NOT NULL,
+  "keyword" VARCHAR(50) NOT NULL,
+  "onyomi" VARCHAR(100),
+  "kunyomi" VARCHAR(200),
+	"meaning" VARCHAR(200)
+);
