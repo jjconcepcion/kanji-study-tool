@@ -40,7 +40,14 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
+// store original request url for redirection after login/logout
+app.use('*', (req, res, next) => {
+  const url = req.originalUrl;
+  if (url !== '/login' && url !== '/register' && url !== '/logout') {
+    req.session.lastVisited = url;
+  }
+  next();
+});
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter)
