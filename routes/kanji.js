@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/:character', (req, res) => {
   const renderOptions = {
     loggedIn: req.user,
+    navSearchBar: true,
   }
 
   const { character } = req.params;

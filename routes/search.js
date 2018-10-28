@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
   const { keyword } = req.query;
   const renderOptions = {
     loggedIn: req.user,
+    navSearchBar: true,
     searchTerm: keyword,
   }
 

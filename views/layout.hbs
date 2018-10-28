@@ -16,6 +16,16 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        {{#if navSearchBar}}
+        <div class="navbar-nav ml-auto">
+          <form method="GET" action="/search" class="form-inline my-2 my-md-0">
+            <div class="input-group-sm">
+              <input class="form-control" type="text" name="keyword" placeholder="Search">
+            </div>
+            <button class="btn-sm" type="submit">Search</button>
+          </form>
+        </div>
+        {{/if}}
         <div class="navbar-nav ml-auto text-right">
           {{# if loggedIn}}
             <a class="nav-item nav-link" href="/logout">Logout</a>
