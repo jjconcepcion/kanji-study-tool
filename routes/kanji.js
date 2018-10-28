@@ -28,8 +28,9 @@ router.get('/:character', (req, res) => {
           renderOptions.kanjiData = rows[0];
           res.render('kanji', renderOptions);
         } else {
-          renderOptions.message = 'Kanji Not Found';
-          res.render('error', renderOptions)
+          renderOptions.title = 'Not Found';
+          renderOptions.message = 'The requested kanji was not found';
+          res.status(404).render('404', renderOptions)
         }
       })
       .catch(err => console.log(err));
