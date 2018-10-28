@@ -4,7 +4,7 @@ const Kanji = require('../models/kanji');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  const { keyword } = req.query;
+  const keyword  = req.query.keyword.trim();
   const renderOptions = {
     loggedIn: req.user,
     navSearchBar: true,
