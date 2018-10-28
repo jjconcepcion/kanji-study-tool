@@ -16,6 +16,11 @@ router.get('/', (req, res) => {
       const { rowCount, rows } = results;
       if (rowCount > 0) {
         renderOptions.searchResults = rows;
+        // save search results for use by kanji route
+        req.session.search = {
+          keyword,
+          results: rows,
+        }
       }
       res.render('search', renderOptions);
     })
