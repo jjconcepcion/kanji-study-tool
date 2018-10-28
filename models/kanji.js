@@ -10,6 +10,19 @@ function findByCharacter(character) {
   };
   return db.query(query)
 }
+
+function search(term) {
+  const query = {
+    text: `
+    SELECT * FROM kanji
+    WHERE keyword like $1;
+    `,
+    values: [`%${term}%`],
+  };
+  return db.query(query)
+}
+
 module.exports = {
   findByCharacter,
+  search,
 } 
