@@ -24,7 +24,7 @@ ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFE
 --
 -- KANJI TABLE
 --
-CREATE TABLE "kanji" (
+CREATE TABLE IF NOT EXISTS "kanji" (
   "rtk_no" SMALLSERIAL PRIMARY KEY,
   "kanji" CHAR(1) NOT NULL,
   "keyword" VARCHAR(50) NOT NULL,
@@ -32,3 +32,13 @@ CREATE TABLE "kanji" (
   "kunyomi" VARCHAR(200),
 	"meaning" VARCHAR(200)
 );
+
+--
+-- NOTE TABLE
+--
+CREATE TABLE IF NOT EXISTS "note" (
+  "kanji_id" SMALLINT REFERENCES kanji("rtk_no"),
+  "user_id" INT REFERENCES users("id"),
+  "text" VARCHAR(1500)
+);
+ALTER TABLE "note" ADD CONSTRAINT "note_pkey" PRIMARY KEY ("kanji_id", "user_id");
