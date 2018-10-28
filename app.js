@@ -58,7 +58,12 @@ app.use('/search', searchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  const renderOptions = {
+    title: '404 Not Found',
+    message: 'The requested page was not found.',
+  }
+  res.status(404).render('404', renderOptions);
+  // next(createError(404));
 });
 
 // error handler
