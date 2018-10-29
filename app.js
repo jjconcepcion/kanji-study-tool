@@ -7,6 +7,8 @@ require('./config/pass')(passport);
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const favicon = require('serve-favicon');
+
 
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
@@ -30,6 +32,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(session({
   store: new pgSession({
     pool: dbPool,
