@@ -14,6 +14,7 @@ const logoutRouter = require('./routes/logout');
 const registerRouter = require('./routes/register');
 const kanjiRouter = require('./routes/kanji');
 const searchRouter = require('./routes/search');
+const noteRouter = require('./routes/note');
 const dbPool = require('./database');
 
 
@@ -55,6 +56,7 @@ app.use('/logout', logoutRouter)
 app.use('/register', registerRouter);
 app.use('/kanji', kanjiRouter);
 app.use('/search', searchRouter);
+app.use('/note', noteRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

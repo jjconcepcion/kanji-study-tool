@@ -35,7 +35,12 @@
     Notes
   </div>
   <div class="card-body">
-    <textarea style="width: 100%; border: none;" name="text">{{kanjiData.note}}</textarea>
+    <form method="POST" action="/note">
+      <input type="hidden" class="form-control" name="kanjiId" value="{{kanjiData.rtk_no}}">
+      <input type="hidden" class="form-control" name="kanjiChar" value="{{kanjiData.kanji}}">
+      <textarea style="width: 100%; border: none;" name="text">{{kanjiData.note}}</textarea>
+      <button type="submit" class="btn float-right">Save</button>
+    </form>
   </div>
 </div>
 {{/if}}
