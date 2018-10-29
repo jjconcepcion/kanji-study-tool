@@ -35,7 +35,7 @@ router.post('/', function(req, res, next) {
       .catch(error => {
         if (error.code = dbError.unique_violation) {
           const fieldName = (error.detail.match(/email/)) ? 'email' : 'username';
-          res.render('register', { message: `${fieldName} is already registerd`});
+          res.render('register', { message: `${fieldName} is already registered`});
         }
       });
   }
