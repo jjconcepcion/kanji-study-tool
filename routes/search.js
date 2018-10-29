@@ -4,6 +4,10 @@ const Kanji = require('../models/kanji');
 const router = express.Router();
 
 router.get('/', (req, res) => {
+  if (!req.query.keyword) {
+    return res.redirect('/');
+  }
+
   const keyword  = req.query.keyword.trim();
   const renderOptions = {
     loggedIn: req.user,
