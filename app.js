@@ -45,7 +45,7 @@ app.use(passport.session());
 // store original request url for redirection after login/logout
 app.use('*', (req, res, next) => {
   const url = req.originalUrl;
-  if (url !== '/login' && url !== '/register' && url !== '/logout') {
+  if (url !== '/login' && url !== '/register' && url !== '/logout' && url !== '/note') {
     req.session.lastVisited = url;
   }
   next();
