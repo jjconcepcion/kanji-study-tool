@@ -13,6 +13,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "express-session": "^1.15.6",
+    "express-sslify": "^1.2.0",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "joi": "^14.0.0",

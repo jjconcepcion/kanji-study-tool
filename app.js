@@ -8,6 +8,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const favicon = require('serve-favicon');
+const enforce = require('express-sslify');
 
 
 const indexRouter = require('./routes/index');
@@ -21,6 +22,8 @@ const dbPool = require('./database');
 
 
 const app = express();
+
+app.use(enforce.HTTPS({ trustProtoHeader: true }))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
