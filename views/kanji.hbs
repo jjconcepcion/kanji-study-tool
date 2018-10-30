@@ -31,14 +31,14 @@
 
 {{#if loggedIn}}
 <div class="card" style="margin-top: 2em">
-  <div class="card-header">
+  <div class="card-header text-center">
     Notes
   </div>
   <div class="card-body">
     <form method="POST" action="/note">
       <input type="hidden" class="form-control" name="kanjiId" value="{{kanjiData.rtk_no}}">
       <input type="hidden" class="form-control" name="kanjiChar" value="{{kanjiData.kanji}}">
-      <textarea class="form-control" name="text">{{kanjiData.note}}</textarea>
+      <textarea class="form-control" rows="10" maxlength="1500" name="text">{{kanjiData.note}}</textarea>
       <button type="submit" class="btn float-right">Save</button>
     </form>
   </div>
