@@ -15,7 +15,7 @@ function search(term) {
   const query = {
     text: `
     SELECT * FROM kanji
-    WHERE keyword like $1
+    WHERE keyword ILIKE $1
     ORDER BY char_length(keyword);
     `,
     values: [`%${term}%`],
