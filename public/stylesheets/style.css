@@ -47,3 +47,10 @@ form button:hover {
 .jumbotron {
     background-color:transparent !important; 
 }
+
+
+@media screen and (max-width: 540px) {
+  .btn-toggle-hide {
+    display: none;
+  }
+}
