@@ -2,9 +2,15 @@
   <h1 class="display-5">{{title}}</h1>
   <hr class="my-4">
   <div style="display: inline-flex">
-    <form method="GET" action="/search" class="form-inline">
-      <input class="search-input form-control mr-sm-1" type="search" name="keyword" placeholder="Search kanji keyword..." aria-label="Search">
-      <button class="btn" type="submit">Search</button>
+    <form method="GET" action="/search">
+      <div class="row">
+        <div class="col-9">
+          <input class="form-control" type="search" name="keyword" placeholder="Search kanji keyword..." aria-label="Search">
+        </div>
+        <div class="col-0">
+          <button class="btn" type="submit">Search</button>
+        </div>
+      </div>
     </form>
   </div>
 </div>

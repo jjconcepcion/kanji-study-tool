@@ -47,8 +47,3 @@ form button:hover {
 .jumbotron {
     background-color:transparent !important; 
 }
-
-
-.search-input {
-  max-width: 72%;
-}
