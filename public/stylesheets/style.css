@@ -16,10 +16,13 @@ nav {
 * FORMS
 *
 */
-.form-container{
+.form-container {
   margin-right: auto;
   margin-left: auto;
   max-width: 540px;
+  border: 1px solid #d0d0e0;
+  border-radius: 5px;
+  padding: 2em;
 }
 
 .form-heading {
@@ -37,8 +40,15 @@ form button:hover {
   color: #fff;
 }
 
+/*
+* CONTAINERS
+*/
 .container {
   margin-top: 5em;
+}
+
+.search-results-container li {
+  text-align: center;
 }
 
 /*

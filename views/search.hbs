@@ -1,17 +1,19 @@
-<p>
-{{#if searchResults}}
-  Showing results for:
-{{else}}
-  No results matching:
-{{/if}}
-<strong>{{searchTerm}}</strong>
-</p>
+<div class="search-results-container">
+  <p>
+  {{#if searchResults}}
+    Showing results for:
+  {{else}}
+    No results matching:
+  {{/if}}
+  <strong>{{searchTerm}}</strong>
+  </p>
 
-<ul class="list-group"></ul>
-{{#each searchResults}}
-  <li class="list-group-item">
-    <a href="/kanji/{{this.kanji}}">
-    {{this.kanji}} &emsp; {{this.keyword}}
-    </a>
-  </li>
-{{/each}}
+  <ul class="list-group"></ul>
+  {{#each searchResults}}
+    <li class="list-group-item">
+      <a href="/kanji/{{this.kanji}}">
+      {{this.kanji}} &emsp; {{this.keyword}}
+      </a>
+    </li>
+  {{/each}}
+</div>
