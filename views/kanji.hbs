@@ -6,8 +6,10 @@
 <div class="kanji-diagram-container text-center">
   <div id="kanji-diagram"></div>
   <div class="kanji-diagram-control">
+    <button id="kanji-diagram-backward" class="btn"><i class="fas fa-backward"></i></button>
     <button id="kanji-diagram-stop" class="btn"><i class="fas fa-stop"></i></button>
     <button id="kanji-diagram-play" class="btn"><i class="fas fa-play"></i></button>
+    <button id="kanji-diagram-forward" class="btn"><i class="fas fa-forward"></i></button>
     <button id="kanji-diagram-reset" class="btn"><i class="fas fa-redo-alt"></i></button>
   </div>
 </div>
@@ -35,6 +37,14 @@
   const reset = document.getElementById("kanji-diagram-reset");
   reset.onclick = function () {
     dmak.erase();
+  };
+  const backward = document.getElementById("kanji-diagram-backward");
+  backward.onclick = function () {
+    dmak.eraseLastStrokes(1);
+  };
+  const forward = document.getElementById("kanji-diagram-forward");
+  forward.onclick = function () {
+    dmak.renderNextStrokes(1);
   };
 </script>
 {{!-- END Kanji Stroke Diagram --}}
