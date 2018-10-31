@@ -18,7 +18,11 @@
   const dmak = new Dmak('{{kanjiData.kanji}}', {
     'element': "kanji-diagram",
     'uri': 'https://kanjivg.tagaini.net/kanjivg/kanji/',
-    'step': 0.01,
+    'step': 0.015,
+    'height': 190,
+    'width': 190,
+    'stroke': { 'attr': { 'stroke': 'random' },
+    }
   });
   const play = document.getElementById("kanji-diagram-play");
   play.onclick = function () {
