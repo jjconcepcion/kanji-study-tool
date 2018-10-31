@@ -23,7 +23,9 @@ const dbPool = require('./database');
 
 const app = express();
 
-app.use(enforce.HTTPS({ trustProtoHeader: true }))
+if (process.env.NODE_ENV === 'production') {
+  app.use(enforce.HTTPS({ trustProtoHeader: true }))
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
