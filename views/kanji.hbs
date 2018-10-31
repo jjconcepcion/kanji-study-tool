@@ -1,7 +1,38 @@
 <div class="text-center">
 <h3>{{kanjiData.keyword}}</h3>
-<p style="font-size: 700%">{{kanjiData.kanji}}</p>    
 </div>
+
+{{!--START Kanji Stroke Diagram --}}
+<div class="text-center">
+  <div id="kanji-diagram"></div>
+  <button id="kanji-diagram-stop" class="btn-sm">STOP</button>
+  <button id="kanji-diagram-play" class="btn-sm">PLAY</button>
+  <button id="kanji-diagram-reset" class="btn-sm">RESET</button>
+</div>
+<script src="/javascripts/raphael-min.js"></script>
+<script src="/javascripts/dmak.js"></script>
+<script src="/javascripts/dmakLoader.js"></script>
+<script>
+  const dmak = new Dmak('{{kanjiData.kanji}}', {
+    'element': "kanji-diagram",
+    'uri': 'https://kanjivg.tagaini.net/kanjivg/kanji/',
+    'step': 0.01,
+  });
+  const play = document.getElementById("kanji-diagram-play");
+  play.onclick = function () {
+    dmak.render();
+  };
+  const stop = document.getElementById("kanji-diagram-stop");
+  stop.onclick = function () {
+    dmak.pause();
+  };
+  const reset = document.getElementById("kanji-diagram-reset");
+  reset.onclick = function () {
+    dmak.erase();
+  };
+</script>
+{{!-- END Kanji Stroke Diagram --}}
+
 <div class="card-deck text-center">
   <div class="card">
     <div class="card-header">
