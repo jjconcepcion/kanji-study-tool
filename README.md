@@ -1,20 +1,7 @@
-# Express, Passport, PostgreSQL login boilerplate
+# KST - Kanji Study Tool
 
-## Usage
-Create Postgres database and create user and session [tables](database/tables.sql)
+Kanji Study Tool is a web application for those studying the Japanese kanji writing system. It serves as a useful accompaniment to the popular course *Remembering the Kanji* (RTK) by Jamese Heisig. 
 
-Install dependencies
-```
-$ npm install
-```
-Edit [environment variables](default.env) with required database configuration, and session secret.
+The app allows users to make use of the keywords Heisig associates with each kanji to lookup the stroke diagrams, the various readings and English meanings of each character covered in RTK. Additionally, users are able save personal annotations with each kanji character useful when practicing the use of mnemonics advocated by Heisig.
 
-Set environment variables
-```
-$ source default.env
-```
-
-Run
-```
-$ npm run start
-```
+Use the app by following the link: [kst.herokuapp.com](https://kst.herokuapp.com)
